@@ -1,0 +1,34 @@
+#!/usr/bin/python2.7
+#coding:utf-8
+
+import re
+
+rule = '((?:eval|eval_r|execute|ExecuteGlobal)\s*?\(?request)'
+
+
+#        '(\<\%(\s|\n)*execute(\s|\n)*request\(.{0,15}\)\%\>)',
+#        '(\<\%(\s|\n)*eval(\s|\n)*request\(.{0,15}\)\%\>)',
+#        '(\<\%(\s|\n)*eval_r(\s|\n)*(R|r)equest.(I|i)tem\[.{0,15}\],.{0,15}(\s|\n)*;(\s|\n)*\%\>)'
+
+
+
+def Check(filestr,filepath):
+    if 'eval' in filestr or 'eval_r' in filestr or 'execute' in filestr or 'ExecuteGlobal' in filestr:
+        result = re.compile(rule).findall(filestr)
+        if len(result)>0:
+            return result,'eval|eval_r|execute|ExecuteGlobal相关后门'
+            #for group in result:
+                #for var in vararr:
+                #    if var in group[2]:
+                #resultson = re.search('\\'+group[2]+rule2,filestr)
+                #try:
+                #    if len(resultson.groups())>0:
+                #        return ((resultson.group(),),(result[0][0],)),'eval|assert($a)动态eval|assert后门'
+                #except:
+                #    continue
+
+        #else:
+        #    result = re.compile(rule1).findall(filestr)
+        #    if len(result)>0:
+        #        return result,'eval|assert(base64加密后门'
+    return None

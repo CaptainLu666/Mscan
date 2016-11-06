@@ -1,0 +1,8 @@
+[2016-10-21 16:56:25,926]  开始查杀
+[2016-10-21 16:56:25,941]  /opt/app/upload/api.php  [("\nrequire_once './api/'", 'require', '_once', '', './api/')]  2016-05-31 11:08:36
+[2016-10-21 16:56:25,944]  /opt/app/upload/index.php  [("\trequire './'", 'require', '', '', './')]  2016-05-31 11:08:36
+[2016-10-21 16:56:25,952]  /opt/app/upload/lu.gif  ['shell_exec', 'eval', 'request', 'request']  2016-10-13 10:49:58
+[2016-10-21 16:56:25,952]  /opt/app/upload/lu.asp  ['eval request', 'execute request']  2016-10-13 11:48:18
+[2016-10-21 16:56:26,578]  /opt/app/upload/source/class/discuz/discuz_admincp.php  [("\trequire './source/admincp/admincp_'", 'require', '', '', './source/admincp/admincp_')]  2016-05-31 11:08:36
+[2016-10-21 16:56:31,681]  /opt/app/upload/static/image/magic/lu.gif  ['execute']  2016-10-12 17:36:30
+[2016-10-21 16:56:34,093]  查杀完成

